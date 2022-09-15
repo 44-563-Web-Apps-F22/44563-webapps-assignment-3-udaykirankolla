@@ -69,6 +69,30 @@
                  ongole we have a lot of malls and hotels one of the mall is kalanikethan in this store we have a lot of stock available what the people needs.
 
                 <hr>
+                <pre>@mixin stripes($direction, $colors) {
+                    $length: length($colors);
+                    
+                    @if $length > 1 {
+                      $stripes: ();
+                      
+                      @for $i from 1 through $length {
+                        $stripe: (100% / $length) * ($i - 1);
+                        
+                        @if $i > 1 {
+                          $stripes: append($stripes, nth($colors, $i - 1) $stripe, comma);
+                        }
+                        
+                        $stripes: append($stripes, nth($colors, $i) $stripe, comma);
+                      }
+                      
+                      background-image: linear-gradient($direction, $stripes);
+                    } @else if $length == 1 {
+                      background-color: $colors;
+                    }
+                  }
+                </pre>
+                <q>Striped Gradient Mixin</q>
+                <a href="https://css-tricks.com/snippets/sass/striped-gradient-mixin/"> Link for the Code snippets</a>
 
 
 
